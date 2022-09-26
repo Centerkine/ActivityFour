@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ActivityFour
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void btn_calculate_Click(object sender, EventArgs e)
+        {
+            double seconds = double.Parse(txtbx_user.Text);
+            double minutes=0;
+            double hours=0;
+            double days=0;
+
+            if (seconds >= 86400) 
+            {
+                days = (seconds / 86400);
+                lbl_calculation.Text = days + " days";
+            }
+                else if (seconds >= 3600 && seconds < 86400)
+            {
+                hours = (seconds / 3600);
+                lbl_calculation.Text = hours + " hours";
+            }
+                else
+            {
+                minutes = (seconds / 60);
+                lbl_calculation.Text = minutes + " minutes";
+            }
+        }
+    }
+}
